@@ -16,7 +16,7 @@ const LoginForm = ({ setIsLogin}) => {
 
     try {
       if (!email || !password) throw Error("Missing required fields");
-      fetch('http://localhost:5000/login',{
+      fetch('https://orderify.onrender.com/login',{
         method: 'POST',
         headers:{
           "content-type":"application/json",

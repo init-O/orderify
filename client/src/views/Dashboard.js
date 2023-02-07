@@ -15,7 +15,7 @@ const Dashboard = () => {
     const handleAddOrder = (e)=>{
         console.log(user.token)
         e.preventDefault()
-        fetch("http://localhost:5000/order",{
+        fetch("https://orderify.onrender.com/order",{
             method:"POST",
             headers:{
                 "content-type":"application/json",
@@ -36,7 +36,7 @@ const Dashboard = () => {
 
     useEffect(()=>{
         if(!user)navigate('/auth')
-        fetch("http://localhost:5000/orders",{
+        fetch("https://orderify.onrender.com/orders",{
             method:"GET",
             headers:{
                 "content-type":"application/json",

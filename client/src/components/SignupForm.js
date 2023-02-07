@@ -33,7 +33,7 @@ const SignupForm = ({ setIsLogin}) => {
 
         if (!validateEmail(email)) throw Error("Invalid Email Format");
 
-        fetch('http://localhost:5000/signup',{
+        fetch('https://orderify.onrender.com/signup',{
           method: 'POST',
           headers:{
             "content-type":"application/json",
