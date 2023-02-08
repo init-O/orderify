@@ -18,7 +18,8 @@ Backend for the application build using Nodejs, Express and MongoDB  as the data
 **Orders API's**
 All the order API's have a middleware for token authenntication 
 
-1) create new order - creates new order\n
+1) create new order - creates new order
+
         url : https://orderify.onrender.com/order
         method : POST,
         headers : {
@@ -33,6 +34,7 @@ All the order API's have a middleware for token authenntication
         }
 
 2) get orders - returns all the orders of the user
+
         url : https://orderify.onrender.com/orders
         method : GET,
         headers : {
@@ -43,7 +45,8 @@ All the order API's have a middleware for token authenntication
 **AUTH API's**
 Handle all the authentication logic for the server and writes it into the database
 
-1)Login user -\n
+1)Login user -
+
         url : https://orderify.onrender.com/login
         method : POST,
         headers : {
@@ -54,7 +57,8 @@ Handle all the authentication logic for the server and writes it into the databa
             password: password,
         }
 
-2)Sign up user -\n
+2)Sign up user -
+
         url : https://orderify.onrender.com/signup
         method : POST,
         headers : {
