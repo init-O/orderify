@@ -45,7 +45,7 @@ const LoginForm = ({ setIsLogin}) => {
 
 
   return (
-    <div className="w-full sm:w-2/3 md:w-2/3 lg:w-1/3 mx-auto">
+    <div className="w-full sm:w-2/3 md:w-2/3 lg:w-1/3 mx-auto mt-4">
       <div className="bg-white shadow-md border border-gray-200 rounded-lg  w-full p-4 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
         <form className="space-y-6" action="#">
           

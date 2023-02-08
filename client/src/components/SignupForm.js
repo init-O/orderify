@@ -66,7 +66,7 @@ const SignupForm = ({ setIsLogin}) => {
 
 
   return (
-    <div className="w-full sm:w-2/3 md:w-2/3 lg:w-1/3 mx-auto">
+    <div className="w-full sm:w-2/3 md:w-2/3 lg:w-1/3 mx-auto mt-4">
       <div className="bg-white shadow-md border border-gray-200 rounded-lg  w-full p-4 sm:p-6 lg:p-8 dark:bg-gray-800 dark:border-gray-700">
         <form className="space-y-6" action="#">
           
@@ -105,7 +105,7 @@ const SignupForm = ({ setIsLogin}) => {
             <input
               type="text"
               class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 bg-gray-50 border-0 h-10 border-grey-light rounded rounded-l-none px-3 self-center relative  font-roboto text-xl outline-none"
-              placeholder="Username"
+              placeholder="Name"
               onChange={(e) => setfullName(e.target.value)}
             />
           </div>
@@ -118,7 +118,7 @@ const SignupForm = ({ setIsLogin}) => {
             <input
               type="text"
               class="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 bg-gray-50 border-0 h-10 border-grey-light rounded rounded-l-none px-3 self-center relative  font-roboto text-xl outline-none"
-              placeholder="Username"
+              placeholder="Phone Number"
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
           </div>

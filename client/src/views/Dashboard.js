@@ -4,24 +4,24 @@ import { useNavigate } from 'react-router-dom'
 const Dashboard = () => {
     const navigate = useNavigate()
     const user= JSON.parse(localStorage.getItem('userInfo'))
-    console.log(user.user)
+    console.log(user?.user)
     const [orders, setOrders] = useState([])
 
     const [subtotal, setSubtotal] = useState(0)
-    const [phoneNumber, setPhoneNumber] = useState(user?.user.phone_number)
+    const [phoneNumber, setPhoneNumber] = useState(user?.user?.phone_number)
     const [description, setDescription] = useState("")
 
 
     const handleAddOrder = (e)=>{
-        console.log(user.token)
+        console.log(user?.token)
         e.preventDefault()
         fetch("https://orderify.onrender.com/order",{
             method:"POST",
             headers:{
                 "content-type":"application/json",
-                "Authorization":`Bearer ${user.token}`
+                "Authorization":`Bearer ${user?.token}`
             },
-            body:JSON.stringify({user_id:user?.user._id,phone_number:phoneNumber,description:description,sub_total:subtotal})
+            body:JSON.stringify({user_id:user?.user?._id,phone_number:phoneNumber,description:description,sub_total:subtotal})
         })
         .then(res=>res.json())
         .then(data=>{
@@ -30,7 +30,7 @@ const Dashboard = () => {
         .catch(err=>{
             console.log(err)
         })
-        setOrders([...orders,{user_id:user?.user._id,phone_number:phoneNumber,description:description,sub_total:subtotal}])
+        setOrders([...orders,{user_id:user?.user?._id,phone_number:phoneNumber,description:description,sub_total:subtotal}])
     }
     
 
@@ -40,7 +40,7 @@ const Dashboard = () => {
             method:"GET",
             headers:{
                 "content-type":"application/json",
-                "Authorization":`Bearer ${user.token}`
+                "Authorization":`Bearer ${user?.token}`
             },
         })
         .then(res=>res.json())
@@ -66,9 +66,9 @@ const Dashboard = () => {
                 {orders.map(item=>{
                     return (
                         <div className="w-full flex p-3 border-2 m-2">
-                            <span className="text-lg m-2">{item.description}</span>
-                            <span className="text-lg m-2">{item.phone_number}</span>
-                            <span className="text-lg m-2">{item.sub_total}</span>
+                            <span className="text-lg m-2">Description : {item.description}</span>
+                            <span className="text-lg m-2">phonr number : {item.phone_number}</span>
+                            <span className="text-lg m-2">Total : {item.sub_total}</span>
                         </div>
                     )
                 })}
@@ -87,7 +87,7 @@ const Dashboard = () => {
                     <input
                     type="text"
                     className="flex-shrink flex-grow flex-auto leading-normal w-px flex-1 bg-gray-50 border-0 h-10 border-grey-light rounded rounded-l-none px-3 self-center relative  font-roboto text-xl outline-none"
-                    placeholder={user?.user.phone_number}
+                    placeholder={user?.user?.phone_number}
                     onChange={(e) => setPhoneNumber(e.target.value)}
                     />
                 </div>
